@@ -1029,6 +1029,16 @@ $(".mail").change(function(){
                                                     </div>
                                                 </div>
                                             </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-3 control-label">Detalle Entidades</label>
+                                                <div class="col-sm-9 controls">
+                                                    <div class="row">
+                                                        <div class="col-xs-9">
+                                                          <textarea maxlength="600" name="data[Activity][detalleentidades]" rows="3" class="form-control" placeholder="M&aacute;ximo 600 Caracteres"><?php echo $this->data['Activity']['detalleentidades']; ?></textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                          
                                             <div class="row" style="border-top: 1px dashed #666666; border-bottom: 1px dashed #666666; padding: 10px;">
 

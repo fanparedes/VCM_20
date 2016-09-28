@@ -83,7 +83,7 @@
 							<div class="row">
 								<div class="col-md-6">
 									<p><b>Origen demanda:</b><?php
-                                    if ($activity['Activity']['actividad_hito'] == 1) { ?>
+                                    if ($activity['Activity']['actividad_hito'] == 0) { ?>
                                         Interna
                                     <?php }  else { ?>
                                         Externa

@@ -76,10 +76,10 @@
 					}
 					echo '</td>';
 					echo '<td>';
-					if($activity['Activity']['origen_del_proyecto']=='0'){
-						echo 'Demanda Interna';
-					}elseif($activity['Activity']['origen_del_proyecto']=='1'){
+					if($activity['Activity']['origen_del_proyecto']=='1'){
 						echo 'Demanda Externa';
+					}else{
+						echo 'Demanda Interna';
 					}
 					echo '</td>';
 					echo '<td>'.$activity['Activity']['descripcion_actividad'].'</td>';
@@ -445,10 +445,10 @@
 					}
 					echo '</td>';
 					echo '<td>';
-					if($activity['Activity']['origen_del_proyecto']=='0'){
-						echo 'Demanda Interna';
-					}elseif($activity['Activity']['origen_del_proyecto']=='1'){
+					if($activity['Activity']['origen_del_proyecto']=='1'){
 						echo 'Demanda Externa';
+					}else{
+						echo 'Demanda Interna';
 					}
 					echo '</td>';
 					echo '<td>'.mb_convert_encoding($activity['Activity']['descripcion_actividad'],'UTF-8', 'ISO-8859-1').'</td>';
@@ -707,8 +707,14 @@
 					echo '<td>'.mb_convert_encoding($activity['Activity']['detallepresupuesto'],'UTF-8', 'ISO-8859-1').'</td>';
 					echo '<td>';
 					if(is_array($activity['Milestone'])){
+						$i=0;
 						foreach($activity['Milestone'] as $institution) {
-							echo mb_convert_encoding($institution['objetivo']." - ",'UTF-8', 'ISO-8859-1')." - ";
+							$i++;
+							if(count($activity['Milestone'])==$i){
+								echo mb_convert_encoding($institution['objetivo']." - ",'UTF-8', 'ISO-8859-1');
+							}else{
+								echo mb_convert_encoding($institution['objetivo']." - ",'UTF-8', 'ISO-8859-1')." - ";
+							}
 		 			   	}
 					}
 					echo '</td>';
